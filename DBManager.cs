@@ -10,8 +10,6 @@ namespace RollTools
 {
     class DBManager : IDisposable
     {
-
-        StreamWriter streamWriterLog = null;
         private SQLiteConnection _SQLiteConn = null;
         private SQLiteTransaction _SQLiteTrans = null;
         private bool _IsRunTrans = false;
@@ -22,17 +20,11 @@ namespace RollTools
 
         public string _dbName { get; private set; }
         public string SQLiteConnString { get => _SQLiteConnString; set => _SQLiteConnString = value; }
-        public StreamWriter StreamWriterLog { get => streamWriterLog; set => streamWriterLog = value; }
 
         public DBManager(string dbPath)
         {
             this._dbName = dbPath;
-            StreamWriterLog = new StreamWriter(this._dbName + ".log", true, Encoding.Default);
             this._SQLiteConnString = "Data Source=" + this._dbName;
-            if (!File.Exists(_dbName))
-            {
-                NewDbFile();
-            }
         }
 
         public Boolean NewDbFile()
@@ -40,8 +32,6 @@ namespace RollTools
             try
             {
                 SQLiteConnection.CreateFile(_dbName);
-                StreamWriterLog.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "" + "-->" + _dbName + "创建成功！");
-                StreamWriterLog.Flush();
             }
             catch (Exception ex)
             {
@@ -70,8 +60,27 @@ namespace RollTools
             cmd.Connection = _SQLiteConn;
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
-            StreamWriterLog.WriteLine(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff") + "" + "-->" + sql + "执行成功！");
-            StreamWriterLog.Flush();
+        }
+
+        /// <summary>
+        /// 执行SQL命令
+        /// </summary>
+        /// <returns>The query.</returns>
+        /// <param name="queryString">SQL命令字符串</param>
+        public SQLiteDataReader ExecuteQuery(string sql)
+        {
+            SQLiteDataReader dataReader;
+            try
+            {
+                SQLiteCommand cmd = _SQLiteConn.CreateCommand();
+                cmd.CommandText = sql;
+                dataReader = cmd.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("执行：" + _dbName + "的查询失败：" + ex.Message);
+            }
+            return dataReader;
         }
 
         public Boolean Open()

@@ -5,50 +5,50 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RollTools"
         mc:Ignorable="d"
-        Title="TagSetting" Height="400" Width="600">
+        Title="列表池标签" Height="400" Width="600">
     <Grid>
-        <DockPanel LastChildFill="False" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="21*"/>
+            <ColumnDefinition Width="33*"/>
+            <ColumnDefinition Width="539*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel LastChildFill="False" Grid.ColumnSpan="3" Margin="0,0,0.001,0" >
             <Grid DockPanel.Dock="Top">
-                <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal">
-                    <Label Content="XXXTAG" HorizontalAlignment="Center"  VerticalAlignment="Center" />
-                    <Label Content="列表池" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="245,0,244.999,10">
+                    <Label x:Name="poll_title" Content="XXXTAG" HorizontalAlignment="Center"  VerticalAlignment="Center" />
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Left" Width="350">
                 <StackPanel HorizontalAlignment="Right" Margin="0, 0, 0, 20">
-                    <ListView Width="300">
+                    <ListView x:Name="tagListView" Width="300" Height="300">
                         <ListView.View>
                             <GridView>
-                                <GridViewColumn Width="50">
+                                <GridViewColumn>
                                     <GridViewColumn.Header>
-                                        <CheckBox VerticalContentAlignment="Center">全选</CheckBox>
+                                        <CheckBox VerticalContentAlignment="Center" Click="selectAll" />
                                     </GridViewColumn.Header>
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <CheckBox ></CheckBox>
+                                            <CheckBox IsChecked="{Binding IsChecked}" Tag="{Binding Id}"></CheckBox>
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
-                                <GridViewColumn Header="名称" Width="250">
+                                <GridViewColumn Header="名称" Width="200">
                                     <GridViewColumn.CellTemplate>
                                         <DataTemplate>
-                                            <TextBox Text="SF" TextAlignment="Center" Width="230" VerticalContentAlignment="Center" Height="40"></TextBox>
+                                            <TextBox x:Name="ItemBox" Text="{Binding Name}" TextAlignment="Center" Width="185" VerticalContentAlignment="Center" Height="40"></TextBox>
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
+                                <GridViewColumn Header="状态">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding IsUse}" />
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
                             </GridView>
                         </ListView.View>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-                        <ListViewItem Content="ListViewItem" Margin="0"/>
-
                     </ListView>
                 </StackPanel>
             </Grid>
@@ -56,19 +56,19 @@
                 <Grid DockPanel.Dock="Top">
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                            <Button Content="Roll" Height="40" Width="75"></Button>
-                            <Button Content="Roll" Height="40" Width="75"></Button>
+                            <Button Content="添加" Height="40" Width="75" Click="addTag"></Button>
+                            <Button Content="删除" Height="40" Width="75" Click="deleteSelected"></Button>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                            <Button Content="Roll" Height="40" Width="75"></Button>
-                            <Button Content="Roll" Height="40" Width="75"></Button>
+                            <Button Content="启用" Height="40" Width="75" Click="openSelected"></Button>
+                            <Button Content="禁用" Height="40" Width="75" Click="closeSelected"></Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
                 <Grid DockPanel.Dock="Bottom">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" >
-                        <Button Content="Roll" Height="40" Width="75"></Button>
-                        <Button Content="Roll" Height="40" Width="75"></Button>
+                        <Button x:Name="btnSave" Content="保存" Height="40" Width="75" Click="saveChange"></Button>
+                        <Button Content="返回" Height="40" Width="75" Click="closeWindow"></Button>
                     </StackPanel>
                 </Grid>
 

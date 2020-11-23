@@ -7,58 +7,6 @@
         mc:Ignorable="d"
         Title="VisibilitySetting" Height="400" Width="600">
     <Grid>
-        <DockPanel LastChildFill="False" Grid.ColumnSpan="2" >
-            <Grid DockPanel.Dock="Top">
-                <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal">
-                    <Label Content="XXXTAG" HorizontalAlignment="Center"  VerticalAlignment="Center" />
-                    <Label Content="列表池" HorizontalAlignment="Center"  VerticalAlignment="Center" />
-                </StackPanel>
-            </Grid>
-            <Grid DockPanel.Dock="Left" Width="300">
-                <StackPanel HorizontalAlignment="Right">
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox TextWrapping="Wrap" Text="TextBox" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox TextWrapping="Wrap" Text="TextBox" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox TextWrapping="Wrap" Text="TextBox" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox TextWrapping="Wrap" Text="TextBox" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
-                    </StackPanel>
-                </StackPanel>
-            </Grid>
-            <Grid DockPanel.Dock="Right" Width="130">
-                <StackPanel HorizontalAlignment="Left">
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button Content="Roll" Height="40" Width="75"></Button>
-                        <Button Content="*" Height="40" Width="40"></Button>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button Content="Roll" Height="40" Width="75"></Button>
-                        <Button Content="*" Height="40" Width="40"></Button>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button Content="Roll" Height="40" Width="75"></Button>
-                        <Button Content="*" Height="40" Width="40"></Button>
-                    </StackPanel>
-                    <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button Content="Roll" Height="40" Width="75"></Button>
-                        <Button Content="*" Height="40" Width="40"></Button>
-                    </StackPanel>
-                </StackPanel>
-            </Grid>
-            <Grid Width="160">
-                <StackPanel HorizontalAlignment="Center">
-                    <Label Content="英雄" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                    <Label Content="英雄英雄英雄" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                    <Label Content="英雄英雄英雄" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                    <Label Content="英雄英雄英雄" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                </StackPanel>
-            </Grid>
-        </DockPanel>
 
     </Grid>
 </Window>

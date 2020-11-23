@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RollTools"
         mc:Ignorable="d"
-        Title="整活助手" Height="300" Width="600" WindowStyle="ToolWindow" >
+        Title="整活助手" Height="320" Width="600" WindowStyle="ToolWindow" >
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="369*"/>
+            <ColumnDefinition Width="224*"/>
+        </Grid.ColumnDefinitions>
         <DockPanel LastChildFill="False" Grid.ColumnSpan="2" >
             <Grid DockPanel.Dock="Top">
                 <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal">
@@ -19,36 +23,36 @@
             <Grid DockPanel.Dock="Left" Width="300">
                 <StackPanel HorizontalAlignment="Right">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName1" TextWrapping="Wrap" Text="" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName1" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName2" TextWrapping="Wrap" Text="" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName2" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName3" TextWrapping="Wrap" Text="" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName3" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName4" TextWrapping="Wrap" Text="" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName4" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Right" Width="130">
                 <StackPanel HorizontalAlignment="Left">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="rollName1" Content="Roll" Height="40" Width="75"></Button>
-                        <Button x:Name="settingName1" Content="*" Height="40" Width="40"></Button>
+                        <Button x:Name="rollName1" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
+                        <Button x:Name="settingName1" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="rollName2" Content="Roll" Height="40" Width="75"></Button>
-                        <Button x:Name="settingName2" Content="*" Height="40" Width="40"></Button>
+                        <Button x:Name="rollName2" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
+                        <Button x:Name="settingName2" Content="*" Height="40" Width="40" Click="SettingTag" ></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="rollName3" Content="Roll" Height="40" Width="75"></Button>
-                        <Button x:Name="settingName3" Content="*" Height="40" Width="40"></Button>
+                        <Button x:Name="rollName3" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
+                        <Button x:Name="settingName3" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="rollName4" Content="Roll" Height="40" Width="75"></Button>
-                        <Button x:Name="settingName4" Content="*" Height="40" Width="40"></Button>
+                        <Button x:Name="rollName4" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
+                        <Button x:Name="settingName4" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>

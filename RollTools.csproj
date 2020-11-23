@@ -60,13 +60,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BasicService.cs" />
     <Compile Include="DBManager.cs" />
     <Compile Include="Poll.cs" />
+    <Compile Include="PollService.cs" />
     <Compile Include="Settings.cs" />
+    <Compile Include="Settings.xaml.cs">
+      <DependentUpon>Settings.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tag.cs" />
+    <Compile Include="TagService.cs" />
     <Compile Include="TagSetting.xaml.cs">
       <DependentUpon>TagSetting.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Template.cs" />
+    <Compile Include="TemplateService.cs" />
     <Compile Include="VisibilitySetting.xaml.cs">
       <DependentUpon>VisibilitySetting.xaml</DependentUpon>
     </Compile>
@@ -82,6 +90,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Settings.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="TagSetting.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
