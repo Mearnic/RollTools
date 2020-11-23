@@ -63,6 +63,7 @@ namespace RollTools
 
         private void ToSettings(object sender, RoutedEventArgs e)
         {
+            Button settBtn = sender as Button;
             Settings setting = new Settings();
             setting.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             setting.Owner = this;

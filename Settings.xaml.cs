@@ -143,19 +143,22 @@ namespace RollTools
         private void addTemplate(object sender, RoutedEventArgs e)
         {
 
-
-            Template template = new Template();
-            template.Id = templateService.GenerateId();
-            template.Name = "new";
-            template.Is_used = "1";
-            foreach (Template item in bindingList)
+            if (MessageBox.Show("确定添加新的池模板？", "提示", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
             {
-                item.Is_used = "0";
+                Template template = new Template();
+                template.Id = templateService.GenerateId();
+                template.Name = "new";
+                template.Is_used = "1";
+                foreach (Template item in bindingList)
+                {
+                    item.Is_used = "0";
+                }
+                templateService.insert(template);
+                bindingList.Insert(0, template);
+                Refresh();
+                ChangeTextEvent("");
             }
-            templateService.insert(template);
-            bindingList.Insert(0, template);
-            Refresh();
-            ChangeTextEvent("");
+
         }
 
         private void Refresh()

@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RollTools"
         mc:Ignorable="d"
-        Title="整活助手" Height="320" Width="600" WindowStyle="ToolWindow" >
+        Title="整活助手" Height="320" Width="600" WindowStyle="ToolWindow"
+        Background="#eeeeee">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="369*"/>
@@ -14,58 +15,74 @@
         <DockPanel LastChildFill="False" Grid.ColumnSpan="2" >
             <Grid DockPanel.Dock="Top">
                 <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal">
-                    <Label x:Name="mainTitle" Content="整活挑战" FontSize="20" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Label x:Name="mainTitle" Content="整活挑战" FontFamily="楷体" FontSize="20" HorizontalAlignment="Center"  VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Height="50" Orientation="Horizontal" Margin="0,0,20,0">
-                    <Button Content="设置" FontSize="20" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="ToSettings"  />
+                    <Button Content="设置" FontSize="16" FontFamily="楷体" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="ToSettings"  />
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Left" Width="300">
                 <StackPanel HorizontalAlignment="Right" Width="300">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName1" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName1" TextWrapping="Wrap" Text="待Roll" FontFamily="楷体" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName2" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName2" TextWrapping="Wrap" Text="待Roll" FontFamily="楷体" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName3" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName3" TextWrapping="Wrap" Text="待Roll" FontFamily="楷体" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <TextBox x:Name="tagName4" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
+                        <TextBox x:Name="tagName4" TextWrapping="Wrap" Text="待Roll" FontFamily="楷体" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Right" Width="160">
                 <StackPanel HorizontalAlignment="Left" Width="169.333" Margin="-9.333,0,0,0">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="resetName1" Content="重置" Height="40" Width="40" Click="resetTags"></Button>
-                        <Button x:Name="rollName1" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
-                        <Button x:Name="settingName1" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
+                        <Button x:Name="resetName1" Content="重置" Height="40" Width="40" Click="resetTags" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="rollName1" Content="Roll" Height="40" Width="75" Click="RollTag" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="settingName1" Height="40" Width="40" Click="SettingTag" Focusable="False">
+                            <Button.Background>
+                                <ImageBrush ImageSource="timg.jpg"/>
+                            </Button.Background>
+                        </Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="resetName2" Content="重置" Height="40" Width="40"></Button>
-                        <Button x:Name="rollName2" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
-                        <Button x:Name="settingName2" Content="*" Height="40" Width="40" Click="SettingTag" ></Button>
+                        <Button x:Name="resetName2" Content="重置" Height="40" Width="40" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="rollName2" Content="Roll" Height="40" Width="75" Click="RollTag" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="settingName2" Height="40" Width="40" Click="SettingTag"  Focusable="False">
+                            <Button.Background>
+                                <ImageBrush ImageSource="timg.jpg"/>
+                            </Button.Background>
+                        </Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="resetName3" Content="重置" Height="40" Width="40"></Button>
-                        <Button x:Name="rollName3" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
-                        <Button x:Name="settingName3" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
+                        <Button x:Name="resetName3" Content="重置" Height="40" Width="40" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="rollName3" Content="Roll" Height="40" Width="75" Click="RollTag" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="settingName3" Height="40" Width="40" Click="SettingTag"  Focusable="False">
+                            <Button.Background>
+                                <ImageBrush ImageSource="timg.jpg"/>
+                            </Button.Background>
+                        </Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                        <Button x:Name="resetName4" Content="重置" Height="40" Width="40"></Button>
-                        <Button x:Name="rollName4" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
-                        <Button x:Name="settingName4" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
+                        <Button x:Name="resetName4" Content="重置" Height="40" Width="40" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="rollName4" Content="Roll" Height="40" Width="75" Click="RollTag" FontFamily="楷体" FontWeight="Bold"></Button>
+                        <Button x:Name="settingName4" Height="40" Width="40" Click="SettingTag"  Focusable="False">
+                            <Button.Background>
+                                <ImageBrush ImageSource="timg.jpg"/>
+                            </Button.Background>
+                        </Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>
             <Grid Width="122.667">
                 <StackPanel HorizontalAlignment="Center">
-                    <Label x:Name="pollName1" Content="待设置" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                    <Label x:Name="pollName2" Content="待设置" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                    <Label x:Name="pollName3" Content="待设置" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
-                    <Label x:Name="pollName4" Content="待设置" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
+                    <Label x:Name="pollName1" Content="待设置" FontSize="18" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="楷体" FontWeight="Bold"/>
+                    <Label x:Name="pollName2" Content="待设置" FontSize="16" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="楷体" FontWeight="Bold"></Label>
+                    <Label x:Name="pollName3" Content="待设置" FontSize="16" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="楷体" FontWeight="Bold"></Label>
+                    <Label x:Name="pollName4" Content="待设置" FontSize="16" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontFamily="楷体" FontWeight="Bold"></Label>
                 </StackPanel>
             </Grid>
         </DockPanel>

@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RollTools"
         mc:Ignorable="d"
+        Background="#eeeeee"
         Title="列表池" Height="400" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -14,13 +15,13 @@
         </Grid.ColumnDefinitions>
         <DockPanel LastChildFill="False" Grid.ColumnSpan="3" Margin="0,0,0.001,0" >
             <Grid DockPanel.Dock="Top">
-                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="245,0,244.999,10">
-                    <Label x:Name="poll_title" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label x:Name="poll_title" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" FontSize="18" FontFamily="楷体"/>
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Left" Width="400">
                 <StackPanel HorizontalAlignment="Right" Margin="0, 0, 0, 0">
-                    <ListView x:Name="tagListView" Width="380" Height="300">
+                    <ListView x:Name="tagListView" Width="380" Height="311.333" FontFamily="楷体">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn>
@@ -63,19 +64,19 @@
                 <Grid DockPanel.Dock="Top">
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                            <Button Content="添加" Height="40" Width="75" Click="addTag"></Button>
-                            <Button Content="删除" Height="40" Width="75" Click="deleteSelected"></Button>
+                            <Button Content="添加" FontFamily="楷体" FontSize="16" Height="40" Width="75" Click="addTag"></Button>
+                            <Button Content="删除" FontFamily="楷体" FontSize="16" Height="40" Width="75" Click="deleteSelected"></Button>
                         </StackPanel>
                         <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                            <Button Content="启用" Height="40" Width="75" Click="openSelected"></Button>
-                            <Button Content="禁用" Height="40" Width="75" Click="closeSelected"></Button>
+                            <Button Content="启用" FontFamily="楷体" FontSize="16" Height="40" Width="75" Click="openSelected"></Button>
+                            <Button Content="禁用" FontFamily="楷体" FontSize="16" Height="40" Width="75" Click="closeSelected"></Button>
                         </StackPanel>
                     </StackPanel>
                 </Grid>
                 <Grid DockPanel.Dock="Bottom">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" >
-                        <Button x:Name="btnSave" Content="保存" Height="40" Width="75" Click="saveChange"></Button>
-                        <Button Content="返回" Height="40" Width="75" Click="closeWindow"></Button>
+                        <Button x:Name="btnSave" Content="保存" FontFamily="楷体" FontSize="16"  Height="40" Width="75" Click="saveChange"></Button>
+                        <Button Content="返回" FontFamily="楷体" FontSize="16"  Height="40" Width="75" Click="closeWindow"></Button>
                     </StackPanel>
                 </Grid>
 

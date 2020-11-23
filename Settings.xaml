@@ -5,13 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RollTools"
         mc:Ignorable="d"
-        Title="设置" Height="354" Width="491.334" WindowStyle="ToolWindow">
+        Title="设置" Height="354" Width="491.334" WindowStyle="ToolWindow"
+        Background="#eeeeee">
     <Grid>
         <DockPanel LastChildFill="False" Grid.ColumnSpan="3" Margin="0,0,-1.339,0" >
             <Grid DockPanel.Dock="Top" >
                 <StackPanel HorizontalAlignment="Left" Height="50" Orientation="Horizontal" VerticalAlignment="Top" Margin="10,0,0,0" Width="466" >
-                    <Label FontSize="20" Content="配置项：" HorizontalAlignment="Center"  VerticalAlignment="Center"/>
-                    <ComboBox IsEditable="True" x:Name="cmbTemplates" FontSize="20" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150"
+                    <Label FontSize="18" Content="配置项：" FontFamily="楷体"  HorizontalAlignment="Center"  VerticalAlignment="Center"/>
+                    <ComboBox FontFamily="楷体" IsEditable="True" x:Name="cmbTemplates" FontSize="16" Padding="6" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="150"
                               TextSearch.TextPath="Name" SelectionChanged="changeSelected">
                         <ComboBox.ItemTemplate>
                             <DataTemplate>
@@ -21,18 +22,18 @@
                             </DataTemplate>
                         </ComboBox.ItemTemplate>
                     </ComboBox>
-                    <Button Content="启用" FontSize="20" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0" Click="useTemplate" />
-                    <Button Content="删除" FontSize="20" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="0,0" Click="deleteTemplate" />
-                    <Button Content="新增" FontSize="20" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,10,0,10" Click="addTemplate"/>
-                    <Button Content="保存" FontSize="20" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,10,0,10" Click="updateTemplate" />
+                    <Button Content="启用" FontFamily="楷体"  FontSize="14" Padding="6"  Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,0" Click="useTemplate" />
+                    <Button Content="删除" FontFamily="楷体"  FontSize="14" Padding="6"  Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="0,0" Click="deleteTemplate" />
+                    <Button Content="新增" FontFamily="楷体"  FontSize="14" Padding="6"  Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,10,0,10" Click="addTemplate"/>
+                    <Button Content="保存" FontFamily="楷体"  FontSize="14" Padding="6"  Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Margin="10,10,0,10" Click="updateTemplate" />
 
                 </StackPanel>
             </Grid>
 
-            <ListView x:Name="settingListView"  DockPanel.Dock="Bottom" Height="275.334" Margin="10,0,10.332,0" >
+            <ListView x:Name="settingListView"  DockPanel.Dock="Bottom" Height="275.334" Margin="10,0,10.332,0" FontFamily="楷体">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="是否允许操作">
+                        <GridViewColumn Header="是否允许操作" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <CheckBox IsChecked="{Binding IsVisibility}" Tag="{Binding Id}"></CheckBox>
@@ -43,7 +44,7 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
-                                        <TextBox TextWrapping="Wrap" Text="{Binding Name}" TextAlignment="Center" VerticalContentAlignment="Center"  Height="40"  Width="200"></TextBox>
+                                        <TextBox FontFamily="楷体"  FontSize="14" TextWrapping="Wrap" Text="{Binding Name}" TextAlignment="Center" VerticalContentAlignment="Center"  Height="40"  Width="200"></TextBox>
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
