@@ -37,7 +37,7 @@ namespace RollTools
             tagService = new TagService();
             pollService = new PollService();
             Poll poll = pollService.getPoll(poll_id);
-            this.poll_title.Content = poll.Name;
+            this.poll_title.Content = poll.Name + " 列表池";
             tagList = new BindingList<Tag>(tagService.queryAllList(id));
             this.tagListView.ItemsSource = tagList;
 
@@ -79,6 +79,7 @@ namespace RollTools
             tag.Name = "";
             tag.Poll_id = poll_id;
             tag.Is_use = "1";
+            tag.Is_rolled = "0";
             tagList.Insert(0, tag);
             Refresh();
         }

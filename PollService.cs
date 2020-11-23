@@ -11,7 +11,7 @@ namespace RollTools
         public List<Poll> queryList(long id)
         {
             List<Poll> tables = null;
-            string querySql = "select id, name, is_visibility from poll where template_id = " + id;
+            string querySql = "select id, name, is_visibility, is_repeat from poll where template_id = " + id;
             dBManager.Open();
             SQLiteDataReader reader = dBManager.ExecuteQuery(querySql);
             tables = new List<Poll>();
@@ -21,6 +21,7 @@ namespace RollTools
                 poll.Id = reader.GetInt64(0);
                 poll.Name = reader.GetString(1);
                 poll.Is_visibility = reader.GetString(2);
+                poll.Is_repeat = reader.GetString(3);
                 tables.Add(poll);
             }
             reader.Close();
@@ -31,7 +32,7 @@ namespace RollTools
 
         public void insert(Poll poll)
         {
-            string querySql = "insert into poll values ( " + poll.Id + "," + poll.Template_id + ",'"  +  poll.Name +  "','" + poll.Is_visibility + "')";
+            string querySql = "insert into poll values ( " + poll.Id + "," + poll.Template_id + ",'"  +  poll.Name +  "','" + poll.Is_visibility +  "','" + poll.Is_repeat + "')";
             dBManager.Open();
             dBManager.Execute(querySql);
             dBManager.Close();
@@ -40,7 +41,7 @@ namespace RollTools
 
         public void update(Poll poll)
         {
-            string querySql = "update poll set is_visibility = '" + poll.Is_visibility + "', name = '" + poll.Name + "' where id=" + poll.Id;
+            string querySql = "update poll set is_visibility = '" + poll.Is_visibility + "', name = '" + poll.Name + "', is_repeat = '" + poll.Is_repeat + "' where id=" + poll.Id;
             dBManager.Open();
             dBManager.Execute(querySql);
             dBManager.Commit();
@@ -50,7 +51,7 @@ namespace RollTools
 
         public Poll getPoll(long pollId)
         {
-            string querySql = "select id, name, is_visibility from poll where id = " + pollId;
+            string querySql = "select id, name, is_visibility, is_repeat from poll where id = " + pollId;
             dBManager.Open();
             SQLiteDataReader reader = dBManager.ExecuteQuery(querySql);
             Poll poll = null;
@@ -60,6 +61,7 @@ namespace RollTools
                 poll.Id = reader.GetInt64(0);
                 poll.Name = reader.GetString(1);
                 poll.Is_visibility = reader.GetString(2);
+                poll.Is_repeat = reader.GetString(3);
             }
             reader.Close();
             dBManager.Close();

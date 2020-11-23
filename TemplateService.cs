@@ -69,6 +69,7 @@ namespace RollTools
                 poll.Name = "待设置";
                 poll.Template_id = template.Id;
                 poll.Is_visibility = "1";
+                poll.Is_repeat = "0";
                 pollService.insert(poll);
             }
         }

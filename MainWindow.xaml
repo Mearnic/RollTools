@@ -14,14 +14,14 @@
         <DockPanel LastChildFill="False" Grid.ColumnSpan="2" >
             <Grid DockPanel.Dock="Top">
                 <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal">
-                    <Label Content="整活列表" FontSize="20" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Label x:Name="mainTitle" Content="整活挑战" FontSize="20" HorizontalAlignment="Center"  VerticalAlignment="Center" />
                 </StackPanel>
                 <StackPanel HorizontalAlignment="Right" Height="50" Orientation="Horizontal" Margin="0,0,20,0">
                     <Button Content="设置" FontSize="20" Background="Transparent" HorizontalAlignment="Center"  VerticalAlignment="Center" Click="ToSettings"  />
                 </StackPanel>
             </Grid>
             <Grid DockPanel.Dock="Left" Width="300">
-                <StackPanel HorizontalAlignment="Right">
+                <StackPanel HorizontalAlignment="Right" Width="300">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
                         <TextBox x:Name="tagName1" TextWrapping="Wrap" Text="待Roll" TextAlignment="Center" VerticalContentAlignment="Center"  IsEnabled="False" Height="40"  Width="280"></TextBox>
                     </StackPanel>
@@ -36,27 +36,31 @@
                     </StackPanel>
                 </StackPanel>
             </Grid>
-            <Grid DockPanel.Dock="Right" Width="130">
-                <StackPanel HorizontalAlignment="Left">
+            <Grid DockPanel.Dock="Right" Width="160">
+                <StackPanel HorizontalAlignment="Left" Width="169.333" Margin="-9.333,0,0,0">
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Button x:Name="resetName1" Content="重置" Height="40" Width="40" Click="resetTags"></Button>
                         <Button x:Name="rollName1" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
                         <Button x:Name="settingName1" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Button x:Name="resetName2" Content="重置" Height="40" Width="40"></Button>
                         <Button x:Name="rollName2" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
                         <Button x:Name="settingName2" Content="*" Height="40" Width="40" Click="SettingTag" ></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Button x:Name="resetName3" Content="重置" Height="40" Width="40"></Button>
                         <Button x:Name="rollName3" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
                         <Button x:Name="settingName3" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
                     </StackPanel>
                     <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
+                        <Button x:Name="resetName4" Content="重置" Height="40" Width="40"></Button>
                         <Button x:Name="rollName4" Content="Roll" Height="40" Width="75" Click="RollTag"></Button>
                         <Button x:Name="settingName4" Content="*" Height="40" Width="40" Click="SettingTag"></Button>
                     </StackPanel>
                 </StackPanel>
             </Grid>
-            <Grid Width="160">
+            <Grid Width="122.667">
                 <StackPanel HorizontalAlignment="Center">
                     <Label x:Name="pollName1" Content="待设置" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>
                     <Label x:Name="pollName2" Content="待设置" Height="50" HorizontalAlignment="Center" VerticalContentAlignment="Center"></Label>

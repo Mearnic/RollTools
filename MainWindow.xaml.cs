@@ -51,8 +51,8 @@ namespace RollTools
         void initTable()
         {
             string templateTableSql = "create table template (id Number, name varchar, is_used varchar )";
-            string pollTableSql = "create table poll (id Number, template_id Number, name varchar, is_visibility varchar)";
-            string tagTableSql = "create table tag (id Number, poll_id Number, name varchar, is_use varchar)";
+            string pollTableSql = "create table poll (id Number, template_id Number, name varchar, is_visibility varchar, is_repeat varchar)";
+            string tagTableSql = "create table tag (id Number, poll_id Number, name varchar, is_use varchar, is_rolled varchar)";
             dBManager.Open();
             dBManager.Execute(templateTableSql);
             dBManager.Execute(pollTableSql);
@@ -76,7 +76,8 @@ namespace RollTools
             int index = Int32.Parse(button.Name.Replace("rollName", ""));
             TextBox textBox = FindName("tagName" + (index)) as TextBox;
             long poll_id = Convert.ToInt64(button.Tag);
-            List<Tag> tagList = tagService.queryList(poll_id);
+            Poll poll = pollService.getPoll(poll_id);
+            List<Tag> tagList = tagService.queryList(poll_id, poll.IsRepeat);
 
             textBox.Tag = poll_id;
             if (!indexs.ContainsKey(poll_id) && tagList.Count > 0)
@@ -98,13 +99,31 @@ namespace RollTools
                 MessageBox.Show(Application.Current.MainWindow, "Roll滚动中...", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
+        private void resetTags(object sender, RoutedEventArgs e)
+        {
+
+            if (MessageBox.Show("是否重置所有已抽取项？", "提示", MessageBoxButton.YesNo, MessageBoxImage.Information) == MessageBoxResult.Yes)
+            {
+
+                Button button = sender as Button;
+                int index = Int32.Parse(button.Name.Replace("resetName", ""));
+                long poll_id = Convert.ToInt64(button.Tag);
+                tagService.updateAllRolled(poll_id);
+                loadWindow();
+            }
+            else {
+                return;
+            }
+
+        }
 
         private void updateRoll(object sender, EventArgs e)
         {
             DispatcherTimer timer = sender as DispatcherTimer;
             TextBox box = timer.Tag as TextBox;
             long poll_id = Convert.ToInt64(box.Tag);
-            List<Tag> tagList = tagService.queryList(poll_id);
+            Poll poll = pollService.getPoll(poll_id);
+            List<Tag> tagList = tagService.queryList(poll_id, poll.IsRepeat);
             if (tagList.Count > 0)
             {
                 Tag tag = tagList.OrderBy(t => Guid.NewGuid()).First();
@@ -113,6 +132,8 @@ namespace RollTools
                 if (indexs[poll_id]++ > 50)
                 {
                     timer.Stop();
+                    tag.Is_rolled = "1";
+                    tagService.update(tag);
                     box.Foreground = new SolidColorBrush(Colors.Green);
                     indexs.Remove(poll_id);
                 }
@@ -165,11 +186,14 @@ namespace RollTools
                 label.Content = polls[i].Name;
                 Button roll_button = FindName("rollName" + (i + 1)) as Button;
                 Button setting_button = FindName("settingName" + (i + 1)) as Button;
+                Button reset_button = FindName("resetName" + (i + 1)) as Button;
                 TextBox textBox = FindName("tagName" + (i + 1)) as TextBox;
                 textBox.FontSize = 20;
+                this.mainTitle.Content = "整活挑战(" + template.Name +")";
                 textBox.Foreground = new SolidColorBrush(Colors.DarkRed);
                 roll_button.Tag = polls[i].Id;
                 setting_button.Tag = polls[i].Id;
+                reset_button.Tag = polls[i].Id;
                 textBox.Text = "待Roll";
                 if (!polls[i].IsVisibility)
                 {

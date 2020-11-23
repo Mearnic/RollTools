@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RollTools"
         mc:Ignorable="d"
-        Title="列表池标签" Height="400" Width="600">
+        Title="列表池" Height="400" Width="600">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="21*"/>
@@ -15,12 +15,12 @@
         <DockPanel LastChildFill="False" Grid.ColumnSpan="3" Margin="0,0,0.001,0" >
             <Grid DockPanel.Dock="Top">
                 <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Margin="245,0,244.999,10">
-                    <Label x:Name="poll_title" Content="XXXTAG" HorizontalAlignment="Center"  VerticalAlignment="Center" />
+                    <Label x:Name="poll_title" Content="" HorizontalAlignment="Center"  VerticalAlignment="Center" />
                 </StackPanel>
             </Grid>
-            <Grid DockPanel.Dock="Left" Width="350">
-                <StackPanel HorizontalAlignment="Right" Margin="0, 0, 0, 20">
-                    <ListView x:Name="tagListView" Width="300" Height="300">
+            <Grid DockPanel.Dock="Left" Width="400">
+                <StackPanel HorizontalAlignment="Right" Margin="0, 0, 0, 0">
+                    <ListView x:Name="tagListView" Width="380" Height="300">
                         <ListView.View>
                             <GridView>
                                 <GridViewColumn>
@@ -47,12 +47,19 @@
                                         </DataTemplate>
                                     </GridViewColumn.CellTemplate>
                                 </GridViewColumn>
+                                <GridViewColumn Header="是否已抽取">
+                                    <GridViewColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Label Content="{Binding IsRolled}" />
+                                        </DataTemplate>
+                                    </GridViewColumn.CellTemplate>
+                                </GridViewColumn>
                             </GridView>
                         </ListView.View>
                     </ListView>
                 </StackPanel>
             </Grid>
-            <DockPanel LastChildFill="False" DockPanel.Dock="Right" Width="250" Margin="0, 0, 0, 20">
+            <DockPanel LastChildFill="False" DockPanel.Dock="Right" Width="184.667" Margin="0, 0, 0, 20">
                 <Grid DockPanel.Dock="Top">
                     <StackPanel HorizontalAlignment="Center">
                         <StackPanel HorizontalAlignment="Center" Height="50" Orientation="Horizontal" VerticalAlignment="Top">
